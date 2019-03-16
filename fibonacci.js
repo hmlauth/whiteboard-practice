@@ -6,7 +6,7 @@ function fibonacciASequenceFoundInNature(whichFib) {
          return 0
      } else {
         
-        var goldenRatio = ((Math.pow(1.61803398874989484820, fib)) -      (Math.pow(-0.61803398874989484820, fib)));
+        var goldenRatio = ((Math.pow(1.61803398874989484820, fib)) - (Math.pow(-0.61803398874989484820, fib)));
         var squareRootFive = Math.sqrt(5);
         var getWhichFib = (goldenRatio/squareRootFive);
 
