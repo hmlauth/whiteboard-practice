@@ -2,8 +2,6 @@ function findMostFrequent(nums) {
 
     // iterate over nums array
     var object = {};
-    console.log(object);
-    console.log(Object.keys(object).length)
 
     for (var i = 0; i < nums.length; i ++) {
 
@@ -16,17 +14,23 @@ function findMostFrequent(nums) {
         }
     }
 
-
-    console.log(object);
-    
+    var frequency = -Infinity;
+    var mostFrequentPairs = [];
     for (var key in object) {
-        console.log(object[key]);
+        if (object[key] > frequency) {
+            frequency = object[key];
+            mostFrequentPairs = [];
+        } 
+        
+        if (object[key] === frequency) {
+            mostFrequentPairs.push(parseInt(key));
+        }   
     }
+
+    return mostFrequentPairs
+ 
 
 }
 
-// var arr = [10,2,6,4,4,20];
-// findMostFrequent(arr);
-
-var arr2 = [10,6,6,4,4,20,100,5,-1,0,0,4];
+var arr2 = [10,6,6,4,4,20,100,100,100,5,-1,0,0,4];
 findMostFrequent(arr2);
