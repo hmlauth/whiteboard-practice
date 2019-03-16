@@ -16,12 +16,22 @@ function findMostFrequent(nums) {
         }
     }
 
-    console.log(object)
-    
+
+    console.log(object);
+
+    var entries = Object.entries(object);
+    console.log(entries);
+    console.log(entries[0]);
+    console.log(entries[0][1]); // provides count in array entry
+
+    for (const [value,count] of entries) {
+        console.log(`There are ${value} ${count}`);
+    }
+
 }
 
 // var arr = [10,2,6,4,4,20];
 // findMostFrequent(arr);
 
-var arr2 = [10,6,6,4,4,20,100,5,-1,0,0];
+var arr2 = [10,6,6,4,4,20,100,5,-1,0,0,4];
 findMostFrequent(arr2);
