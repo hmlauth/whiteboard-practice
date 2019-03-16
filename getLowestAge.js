@@ -77,6 +77,7 @@ var peopleArr = [
 }
 ];
 
+// -Infinity
 
 function getYoungestPerson(input) {
     if(!input.length) {

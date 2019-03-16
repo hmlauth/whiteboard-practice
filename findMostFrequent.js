@@ -18,14 +18,9 @@ function findMostFrequent(nums) {
 
 
     console.log(object);
-
-    var entries = Object.entries(object);
-    console.log(entries);
-    console.log(entries[0]);
-    console.log(entries[0][1]); // provides count in array entry
-
-    for (const [value,count] of entries) {
-        console.log(`There are ${value} ${count}`);
+    
+    for (var key in object) {
+        console.log(object[key]);
     }
 
 }
