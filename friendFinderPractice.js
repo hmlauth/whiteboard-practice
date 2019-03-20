@@ -34,7 +34,9 @@ var friendsList = [
 ]
 
 for (var i = 0; i < friendsList.length; i++) {
-    console.log(friendsList[i].scores[0]);
+    for (var j = 0; j < friendsList[i].scores.length; j++) {
+        console.log(friendsList[i].scores[j]);
+    }
 }
 // eachPerson[i]
 
