@@ -1,4 +1,7 @@
 function twoSum(nums, target) {
+    function push(i) {
+        finalIndex.push(nums.indexOf(nums[i]));
+    }
  
     
     console.log(nums.indexOf(2));
@@ -8,7 +11,7 @@ function twoSum(nums, target) {
     for ( i = 0; i < nums.length; i++ ) {
         
         if ( (nums[i] + nums[i+1]) === target) {
-            finalIndex.push(nums.indexOf(nums[i]));
+            push(i)
             finalIndex.push(nums.indexOf(nums[i+1]));
 
         } else if ( (nums[i] + nums[i+2]) === target) {
@@ -41,3 +44,7 @@ var target = 9;
 // Answer = [0, 1] (index of the two integers in nums array that add to the target number).
     // nums[0] + nums[1] = 9
 twoSum(nums,target);
+
+var nums2 = [2, 7, 11, 15, 100, 2, 4, 8];
+var target2 = 12;
+twoSum(nums2,target2);
