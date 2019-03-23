@@ -1,39 +1,19 @@
 function twoSum(nums, target) {
-    function push(i) {
-        finalIndex.push(nums.indexOf(nums[i]));
-    }
- 
-    
-    console.log(nums.indexOf(2));
     
     var finalIndex = [];
  
     for ( i = 0; i < nums.length; i++ ) {
-        
-        if ( (nums[i] + nums[i+1]) === target) {
-            push(i)
-            finalIndex.push(nums.indexOf(nums[i+1]));
-
-        } else if ( (nums[i] + nums[i+2]) === target) {
-            finalIndex.push(nums.indexOf(nums[i]));
-            finalIndex.push(nums.indexOf(nums[i+2]));
-        } else if ( (nums[i] + nums[i+3]) === target ) {
-            finalIndex.push(nums.indexOf(nums[i]));
-            finalIndex.push(nums.indexOf(nums[i+3]));
-        } else if ( (nums[i + 1] + nums[i+2]) === target ) {
-            finalIndex.push(nums.indexOf(nums[i+1]));
-            finalIndex.push(nums.indexOf(nums[i+2]));
-        } else if ( (nums[i + 1 ] + nums[i+3]) === target ) {
-            finalIndex.push(nums.indexOf(nums[i+1]));
-            finalIndex.push(nums.indexOf(nums[i+3]));
-        } else if ( (nums[i + 2] + nums[i+3]) === target ) {
-            finalIndex.push(nums.indexOf(nums[i+2]));
-            finalIndex.push(nums.indexOf(nums[i+3]));
+        for ( var j = i+1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                finalIndex.push(i);
+                finalIndex.push(j);
+            }
         }
     
     }
 
         console.log(finalIndex);
+        return finalIndex
 }
 
 
