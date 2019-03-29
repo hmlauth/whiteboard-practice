@@ -1,43 +1,40 @@
-var friendsList = [
+var obj = {
+    name: "Hanna",
+    scores: [
+        "1",
+        "1",
+        "1"
+        ]
+}
+
+var arr = [
     {
-        name: "Hanna Lauth",
-        photoLink: "https://www.facebook.com/photo.php?fbid=10156460922233072&set=a.454677313071&type=3&theater",
+        name: "Jane",
         scores: [
-            "1 (Strongly Disagree)",
+            "1",
             "2",
-            "3",
-            "4",
-            "5 (Strongly Agree)",
-            "5 (Strongly Agree)",
-            "4",
-            "3",
-            "2",
-            "1 (Strongly Disagree)"
+            "3"
             ]
     },
     {
-        name: "Jennifer Anniston",
-        photoLink: "https://upload.wikimedia.org/wikipedia/commons/1/16/JenniferAnistonHWoFFeb2012.jpg",
+        name: "Smith",
         scores: [
-            "5 (Strongly Agree)",
-            "5 (Strongly Agree)",
-            "5 (Strongly Agree)",
-            "5 (Strongly Agree)",
-            "5 (Strongly Agree)",
-            "5 (Strongly Agree)",
-            "4",
-            "3",
-            "2",
-            "1 (Strongly Disagree)"
+            "5",
+            "5",
+            "5"
             ]
     }
 ]
 
-for (var i = 0; i < friendsList.length; i++) {
-    for (var j = 0; j < friendsList[i].scores.length; j++) {
-        console.log(friendsList[i].scores[j]);
+var oScores = obj.scores
+console.log("oScores", oScores);
+
+var friendsScore = [];
+
+for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].scores.length; j++) {
+        friendsScore.push(arr[i].scores[j])
     }
 }
-// eachPerson[i]
 
-// console.log("eachPerson", eachPerson);
+console.log("friendsScore", friendsScore);
