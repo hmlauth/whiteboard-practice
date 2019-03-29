@@ -33,7 +33,9 @@ var friendsScore = [];
 
 for (var i = 0; i < arr.length; i++) {
     for (var j = 0; j < arr[i].scores.length; j++) {
-        friendsScore.push(arr[i].scores[j])
+        if (arr[i].scores[j] !== obj.scores[i]) {
+            friendsScore.push(arr[i].scores[j])
+        } 
     }
 }
 
