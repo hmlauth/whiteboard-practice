@@ -39,10 +39,20 @@ for (var i = 0; i < arr.length; i++) {
 
     // iterate over current user's scores.length, "reqBody"
     for (var j = 0; j < arr[i].scores.length; j++) {
-        console.log("reqBody", userScores[j]);
-        console.log("arr", arr[i].scores[j]);
         totalDifference += Math.abs(parseInt(userScores[j] - parseInt(arr[i].scores[j])))
-        console.log("totalDifference", totalDifference)
+        
+        if (leastDifferent != -Infinity || totalDifference < leastDifferent) {
+            leastDifferent = totalDifference;
+            bestMatch = i;
 
+            
+        }
+
+        bestMatchObj = {
+            name: arr[bestMatch].name,
+            // photo: arr[bestMatch].photo
+        }
+
+        console.log(bestMatchObj);
     }
 }
