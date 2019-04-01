@@ -42,11 +42,7 @@ for (var i = 0; i < arr.length; i++) {
         console.log("reqBody", userScores[j]);
         console.log("arr", arr[i].scores[j]);
         totalDifference += Math.abs(parseInt(userScores[j] - parseInt(arr[i].scores[j])))
+        console.log("totalDifference", totalDifference)
 
-        // if () {
-        //     friendsScore.push(arr[i].scores[j])
-        // } 
     }
 }
-
-console.log("friendsScore", friendsScore);
