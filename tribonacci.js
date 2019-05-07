@@ -7,6 +7,8 @@ function tribonacci(signature,n){
         return []
     } else if (n === 1) {
       return newArr.slice(0,1)
+    } else if (n === 2) {
+        return newArr.slice(0,2)
     } else { 
       for (var i = 0; newArr.length < n; i++) {
             var nextValue = newArr[i]+newArr[i+1]+newArr[i+2];
