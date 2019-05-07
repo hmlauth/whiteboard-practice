@@ -1,248 +1,82 @@
-var deckOfCards = {
-    cards = [
-        {
-            suit: "diamond",
-            value: "ace"
-        },
-        {
-            suit: "heart",
-            value: "ace"
-        },
-        {
-            suit: "spade",
-            value: "ace"
-        },
-        {
-            suit: "club",
-            value: "ace"
-        },
-        {
-            suit: "diamond",
-            value: "10"
-        },
-        {
-            suit: "heart",
-            value: "10"
-        },
-        {
-            suit: "spade",
-            value: "10"
-        },
-        {
-            suit: "club",
-            value: "10"
-        },
-        {
-            suit: "diamond",
-            value: "king"
-        },
-        {
-            suit: "heart",
-            value: "king"
-        },
-        {
-            suit: "spade",
-            value: "king"
-        },
-        {
-            suit: "club",
-            value: "king"
-        },
-        {
-            suit: "diamond",
-            value: "queen"
-        },
-        {
-            suit: "heart",
-            value: "queen"
-        },
-        {
-            suit: "spade",
-            value: "queen"
-        },
-        {
-            suit: "club",
-            value: "queen"
-        },
-        {
-            suit: "diamond",
-            value: "jack"
-        },
-        {
-            suit: "heart",
-            value: "jack"
-        },
-        {
-            suit: "spade",
-            value: "jack"
-        },
-        {
-            suit: "club",
-            value: "jack"
-        },
-        {
-            suit: "diamond",
-            value: "10"
-        },
-        {
-            suit: "heart",
-            value: "10"
-        },
-        {
-            suit: "spade",
-            value: "10"
-        },
-        {
-            suit: "club",
-            value: "10"
-        },
-        {
-            suit: "diamond",
-            value: "9"
-        },
-        {
-            suit: "heart",
-            value: "9"
-        },
-        {
-            suit: "spade",
-            value: "9"
-        },
-        {
-            suit: "club",
-            value: "9"
-        },
-        {
-            suit: "diamond",
-            value: "8"
-        },
-        {
-            suit: "heart",
-            value: "8"
-        },
-        {
-            suit: "spade",
-            value: "8"
-        },
-        {
-            suit: "club",
-            value: "8"
-        },
-        {
-            suit: "diamond",
-            value: "7"
-        },
-        {
-            suit: "heart",
-            value: "7"
-        },
-        {
-            suit: "spade",
-            value: "7"
-        },
-        {
-            suit: "club",
-            value: "7"
-        },
-        {
-            suit: "diamond",
-            value: "6"
-        },
-        {
-            suit: "heart",
-            value: "6"
-        },
-        {
-            suit: "spade",
-            value: "6"
-        },
-        {
-            suit: "club",
-            value: "6"
-        },
-        {
-            suit: "diamond",
-            value: "5"
-        },
-        {
-            suit: "heart",
-            value: "5"
-        },
-        {
-            suit: "spade",
-            value: "5"
-        },
-        {
-            suit: "club",
-            value: "5"
-        },
-        {
-            suit: "diamond",
-            value: "4"
-        },
-        {
-            suit: "heart",
-            value: "4"
-        },
-        {
-            suit: "spade",
-            value: "4"
-        },
-        {
-            suit: "club",
-            value: "4"
-        },
-        {
-            suit: "diamond",
-            value: "3"
-        },
-        {
-            suit: "heart",
-            value: "3"
-        },
-        {
-            suit: "spade",
-            value: "3"
-        },
-        {
-            suit: "club",
-            value: "3"
-        },
-        {
-            suit: "diamond",
-            value: "2"
-        },
-        {
-            suit: "heart",
-            value: "2"
-        },
-        {
-            suit: "spade",
-            value: "2"
-        },
-        {
-            suit: "club",
-            value: "2"
-        },
-    ],
+//ASSUMPTION - bottom of deck is at index 0
 
-    shuffle = function() {
+function DeckOfCards() {
+    this.deck = [],
+    // initialize cards with loop
+    this.initializeDeck = function () {
+        var suits = ["heart", "club", "diamond", "spades"];
+        var values = ["Ace", "King", "Queen", "Jack", "10", "9", "8", "7", "6", "5", "4", "3", "2"];
+        for (var i = 0; i < suits.length; i++) {
+            for (var j = 0; j < values.length; j++) {
+                var card = {};
+                card.suit = suits[i];
+                card.values = values[j];
+                this.deck.push(card);
+            }
+        }
+    },
+
+    this.shuffle = function () {
+    
+        for (var i = 0; i < this.deck.length; i++) {
+            // remove 1 card at the randomIndex and insert the card at the current index value
+            this.deck.splice(Math.floor(Math.random() * this.deck.length), 1, this.deck[i])
+        }
+
+        return this.deck
 
     },
 
-    drawFromTop = function() {
+    // sory by suit & number ascending
+    this.sortByIndex = function() {
+        
+    },
+
+    // aH,aD,aS,aC, 2H,2D,2S,2C, 3H,3D,3S,3C
+    this.sortByNumber = function() {
 
     },
 
-    drawRandom = function() {
+    this.sortByColor = function() {
 
     },
 
-    insertOnBottom = function() {
+    this.drawFromTop = function () {
+        return this.deck.pop();
 
     },
 
-    insertRandom = function() {
+    this.drawRandom = function () {
+        var randomDraw = Math.floor(Math.random() * this.deck.length);
+        var drawnCard = this.deck[randomDraw];
+        this.deck.splice(randomDraw, 1)
+        return drawnCard
+    },
 
+    this.insertOnBottom = function () {
+
+    },
+
+    this.insertRandom = function (playersCard) {
+        var playersCard = this.playersCard;
+        var randomInsert = Math.floor(Math.random() * this.deck.length);
+        this.deck.splice(randomInsert, 0, playersCard);
     }
 }
+
+// var playersCard = { suit: "diamond", value: "ace" };
+
+// deckOfCards.drawRandom();
+// deckOfCards.drawFromTop();
+// deckOfCards.insertRandom(playersCard);
+
+// console.log(deck);
+var newDeck = new DeckOfCards();
+newDeck.initializeDeck();
+console.log("initialized", newDeck);
+newDeck.shuffle();
+// newDeck.drawFromTop();
+// newDeck.drawRandom();
+// newDeck.insertOnBottom();
+// newDeck.insertRandom();
+console.log(newDeck);
