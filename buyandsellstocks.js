@@ -1,4 +1,4 @@
-// create a function that accepts an array od prices on a give day/index(i)
+// create a function that accepts an array of prices on a give day/index(i)
 function buyAndSellStocks(input) {
     console.log(input);
 

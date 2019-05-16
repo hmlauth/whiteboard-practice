@@ -36,7 +36,7 @@ function bubbleSortDIY(arr) {
     return arr
 }
 
-var arr1 = [1, 2, 1, 1];
-bubbleSortDIY(arr1)
+// var arr1 = [1, 2, 1, 1];
+// bubbleSortDIY(arr1)
 var arr2 = [9, 6, 7, 2, 1];
 bubbleSortDIY(arr2)
