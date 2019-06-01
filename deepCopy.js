@@ -52,5 +52,3 @@ source = {
 };
 
 deepAssign({}, source)
-var saved = deepAssign({}, source);
-deepAssign({}, saved)
