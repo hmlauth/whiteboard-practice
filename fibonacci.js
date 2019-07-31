@@ -1,3 +1,5 @@
+// Write a function fibonacciASequenceFoundInNature which accepts a number (n) and returns the nth number of the fibonacci sequence.
+
 function fibonacciASequenceFoundInNature(whichFib) {
 
     var indexOfFib = whichFib - 1;

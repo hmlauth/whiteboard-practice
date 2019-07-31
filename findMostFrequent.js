@@ -1,3 +1,9 @@
+// Find the most frequent element in an array of integers.
+
+// Return your answer as an array.
+
+// If there are multiple elements that are the most frequent, return them all.
+
 function findMostFrequent(nums) {
 
     // iterate over nums array

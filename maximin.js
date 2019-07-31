@@ -1,3 +1,7 @@
+// Write a function that finds the minimum and maximum elements from an array without using the Math.min or Math.max methods.
+
+// Return an array of the form [minimum, maximum].
+
 function maximin(nums) {
     console.log("ORIGINAL:" + nums);
 

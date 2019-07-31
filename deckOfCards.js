@@ -3,7 +3,7 @@
 function DeckOfCards() {
     this.deck = [],
     // initialize cards with loop
-    this.initializeDeck = function () {
+    this.initializeDeck = function () { 
         var suits = ["heart", "club", "diamond", "spades"];
         var values = ["Ace", "King", "Queen", "Jack", "10", "9", "8", "7", "6", "5", "4", "3", "2"];
         for (var i = 0; i < suits.length; i++) {
@@ -72,6 +72,7 @@ function DeckOfCards() {
 
 // console.log(deck);
 var newDeck = new DeckOfCards();
+console.log(newDeck.deck);
 newDeck.initializeDeck();
 console.log("initialized", newDeck);
 newDeck.shuffle();
