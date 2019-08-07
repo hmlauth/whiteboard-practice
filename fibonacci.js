@@ -1,29 +1,32 @@
-// Write a function fibonacciASequenceFoundInNature which accepts a number (n) and returns the nth number of the fibonacci sequence.
+/* Write a function returnFibonacciValueAtGivenIndex which accepts a number (n) and returns the nth number of the fibonacci sequence.
 
-function fibonacciASequenceFoundInNature(whichFib) {
+INPUT: Index
+OUTPUT: Value of number at the given index
+EXAMPLE: 
+a. Given index of 7, return value of 13
+b. Given index of 5, return value of 5
+[0,1,1,2,3,5,8,13]
 
-    var indexOfFib = whichFib - 1;
-    var arr = [0,1];
-    var temp = 0;
-    var value = 0;
+*/
 
-    for (var i = 0; i < indexOfFib; i++) {
-        temp = parseInt(arr[i]) + parseInt(arr[i+1]);
-        arr.push(temp);
-        }
-        console.log(arr)
-    for (var i = 0; i < arr.length; i++) {
-        if (i === indexOfFib) {
-            console.log(arr[i])
-            value = arr[i]
-        }
+
+function returnFibonnaciValueAtGivenIndex(index) {
+    
+    // keep current index and previous index stored in values vs and array. 
+    let a = 0, b = 1, temp = 0, i = 0;
+
+    while (i < index) {
+        temp = a + b; 
+        a = b; 
+        b = temp; 
+        i++
     }
-    console.log(value)
-    return value
+
+    console.log(a);
+    return a
 }
 
-fibonacciASequenceFoundInNature(5);
-fibonacciASequenceFoundInNature(7);
+returnFibonnaciValueAtGivenIndex(5);
+returnFibonnaciValueAtGivenIndex(7);
 
-// recursive solution
 
