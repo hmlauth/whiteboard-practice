@@ -10,7 +10,7 @@ let matchResults = [
 ];
 
 
-const getMatchScores = array => array.map(item => item[2] === item[3] ? 1 : 3);
+const getMatchScores = array => array.map(item => item[2] === item[3] ? 2 : 3);
 
 const sumMatchScores = array => array.reduce((accum, value) => accum + value);
 
